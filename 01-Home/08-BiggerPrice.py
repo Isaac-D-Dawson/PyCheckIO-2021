@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You have a table with all available goods in the store. The data is represented as a list of dicts
 #Your mission here is to find the TOP most expensive goods. The amount we are looking for will be given as a first argument and the whole data as the second one
 
@@ -9,11 +12,14 @@ def bigger_price(limit: int, data: list) -> list:
         Returns the (limit) most expensive items in data.
     """
     
-    inval = sorted(data, key=lambda j: j["price"])
+    inval = sorted(data, key=lambda j: j["price"])	#sort the lst of dictionaries by their prices
     
     outval =[]
-    for i in range(1, limit+1):
-        outval.append(inval[-i])
+    for i in range(1, limit+1):		#gets a range based on how many items the inputs requested.
+        outval.append(inval[-i])	#adds that many items to the ouput.
+		#Note to self: list slice could probably handle this nicely.
+		#Then again, there are a few hang situations possible here that weren't accounted for in the specs...
+		#Eh, not my problem right now.
     
     return outval
 

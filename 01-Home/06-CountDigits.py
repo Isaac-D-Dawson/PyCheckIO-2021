@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You need to count the number of digits in a given string.
 
 #Input: A Str.
@@ -8,11 +11,11 @@ def count_digits(text: str) -> int:
         returns the number of digits in a string
     '''
     
-    outval = 0
+    outval = 0	#start with a count of 0
     
-    for i in text:
-        if i.isnumeric() == True:
-            outval += 1
+    for i in text:					#cycle through each character in the test
+        if i.isnumeric() == True:	#if it's a number
+            outval += 1				#add one to the output
     
     return outval
 

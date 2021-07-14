@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #I am ashamed to admit I used the hints on this one. I'm not sure how the solution used here differs from the solution I used, but it...works..somehow.
 # I clearly need to work on this more.
 
@@ -22,18 +25,17 @@ def safe_pawns(pawns: set) -> int:
         Takes a set of chess piece locations, assumes all are pawns, and returns the number of those pices that are "Safe"
     '''
     
-    pawns_indexes = set()
-    for p in pawns:
-        row = int(p[1]) - 1
-        col = ord(p[0]) - 97
-        pawns_indexes.add((row, col))
+    pawns_indexes = set()	#uses a set for the indexes to remove duplicates
+    for p in pawns:			#iterates through pawns
+        row = int(p[1]) - 1		#converts the piece row to an accurate int
+        col = ord(p[0]) - 97	#and the rank to an int as well
+        pawns_indexes.add((row, col))	#saves them
     count = 0
-    for row, col in pawns_indexes:
-        is_safe = ((row - 1, col - 1) in pawns_indexes) or ((row - 1, col + 1) in pawns_indexes)
+    for row, col in pawns_indexes:	#cycles through all the unique pawns, now that we've sorted them.
+        is_safe = ((row - 1, col - 1) in pawns_indexes) or ((row - 1, col + 1) in pawns_indexes)	#checks if a pawn is safe by checking it';s covering tiles.
         if is_safe:
-            count += 1
+            count += 1	#if it is safe, add to the count.
     
-    print(count)
     return count
 
 if __name__ == '__main__':

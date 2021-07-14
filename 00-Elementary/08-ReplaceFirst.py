@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #In a given list the first element should become the last one. An empty list or list with only one element should stay the same.
 #Example: [1,2,3,4] = [2,3,4,1]
 
@@ -12,11 +15,9 @@ def replace_first(items: list) -> Iterable:
     '''
     
     
-    if len(items) > 1:
-        print(items)
-        items.append(items[0])
-        items  = items[1:]
-        print(items)
+    if len(items) > 1:			#ensures there are enough items to work with.
+        items.append(items[0])	#Drab the first item, stick it on the end
+        items  = items[1:]		#Wipe the first item. Pop could have done this better, but hindsight is always right.
     
     return items
 

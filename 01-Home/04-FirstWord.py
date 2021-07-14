@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You are given a string where you have to find its first word.
 #When solving a task pay attention to the following points:
 #There can be dots and commas in a string.
@@ -13,26 +16,26 @@ def first_word(text: str) -> str:
     """
         returns the first word in a given text.
     """
-    text = [i for i in text.split(".")]
+    text = [i for i in text.split(".")]	#split sentences by "." chars (why...did I use a comprehension?)
     
+	#glues those string back together with a loop and spaces.
     inval = ""
     for i in text:
         inval += f" {i}"
     text = inval
     
-    text = [f"{i} " for i in text.split(",")]
+    text = [f"{i} " for i in text.split(",")]	#splits it again in the same way, sticks it back togethe too...Hmm.
     inval = ""
     for i in text:
         inval += f" {i}"
     text = inval
     
-    text = text.split(" ")
+    text = text.split(" ")	#Finally, a sane split.
     
-    while text[0] == "":
+    while text[0] == "":	#Deletes all empty intro sections.
         text.pop(0)
-        
-    print(text)
-    return text[0]
+   
+    return text[0] #returns the first word it finds.
 
 
 if __name__ == '__main__':

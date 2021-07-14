@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #Split the string into pairs of two characters. If the string contains an odd number of characters, then the missing second character of the final pair should be replaced with an underscore ('_').
 
 #Input: A string.
@@ -11,14 +14,15 @@ def split_pairs(a: str) -> list:
         If the string is empty an empty list will be returned instead.
     '''
     
-    if len(a) % 2 == 1:
-        a  += "_"
+    if len(a) % 2 == 1:	#Check if the input is even
+        a  += "_"		#if not, make it even with a blank character
         
-    outval  = []
+	#assign an output variable
+    outval  = []		
     
-    while len(a) > 1:
-        outval.append(f"{a[0]}{a[1]}")
-        a = a[2:]
+    while len(a) > 1:					#as long as there's something to work with (since 0 is technically even this is needed for blank strings)
+        outval.append(f"{a[0]}{a[1]}")	#append the first two characters into the outval
+        a = a[2:]						#Reset the input to remove the two chars we just added.
         
         
     return outval

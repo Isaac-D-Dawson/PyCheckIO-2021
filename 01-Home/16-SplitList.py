@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You have to split a given array into two arrays. If it has an odd amount of elements, then the first array should have more elements. If it has no elements, then two empty arrays should be returned.
 
 #Input: Array.
@@ -9,22 +12,22 @@ def split_list(items: list) -> list:
         If the input is empty, two empty lists are returned.
     '''
     
-    outval = [[], []]
+    outval = [[], []]		#creats an output of two empty lists.
     
-    if items != []:
-        if len(items) % 2 == 1:
+    if items != []:				#if the inputs aren't empty...
+        if len(items) % 2 == 1:	#we see if we have an odd number of items.
             i = 0
             j = -i-1
-            while i < int(len(items)/2):
+            while i < int(len(items)/2):	#if so, we alternate, appending items from the start and end of the list to the two output lists.
                 outval[0].append(items[i])
                 outval[1].append(items[j])
                 i += 1
                 j -= 1
             
-            outval[0].append(items[i])
-            outval[1].reverse()
+            outval[0].append(items[i])		#when we're dne, we append the remaining items....
+            outval[1].reverse()				#and reverse the backwards list
         else:
-            for i in range(0, int(len(items)/2)):
+            for i in range(0, int(len(items)/2)):		#however, if it's even, we just cut the list in half and stick each half in the output.
                 outval[0].append(items[i])
             for j in range(int(len(items)/2), len(items)):
                 outval[1].append(items[j])

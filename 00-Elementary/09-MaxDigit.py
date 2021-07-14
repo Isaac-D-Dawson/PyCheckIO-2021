@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You have a number and you need to determine which digit in this number is the biggest.
 
 #Input: A positive int.
@@ -9,11 +12,11 @@ def max_digit(number: int) -> int:
     '''
     
     
-    inval = [i for i in str(number)]
+    inval = [i for i in str(number)]	#create a list of digits in the number
     
-    inval.sort()
+    inval.sort()						#sort that list.
     
-    return int(inval[-1])
+    return int(inval[-1])				#grab the last(largest) item from that list.
 
 
 if __name__ == '__main__':

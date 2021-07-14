@@ -1,3 +1,6 @@
+#V2.0: initial program, improved from V1.0, which meets all requirements provided.
+#V2.1: added comments explaining logic.
+
 #This is a more advanced version of "13-BetweenMarkers-simple.py" from the "Elementary" folder.
 #This was written from scratch, with no input from that file, but if you want to go look at it, you know where it is now.
 
@@ -18,21 +21,20 @@ def between_markers(text: str, begin: str, end: str) -> str:
     """
     
     if begin in text:
-        begin = text.index(begin) + len(begin)
-    else:
-        begin = 0
+        begin = text.index(begin) + len(begin)	#if there's a valid beginning character, grab it's index
+    else:										#Note we subtract the length of the beginning, as it's exclusive, not inclusive.
+        begin = 0								#if not, assume it starts at the start.
     
     if end in text:
-        endin = text.index(end)
+        endin = text.index(end)					#if the end char is valid, save that as the end.
     else:
-        return text[begin:]
+        return text[begin:]						#otherwise, just return it from the beginning
+		#The end is already the end and it saves us dealing with everything else.
         
     if begin < endin:
-        print(text)
-        print(text[begin:endin])
-        return text[begin:endin]
+        return text[begin:endin]				#Return the values between the beginning and the end, if the beginning is before the end.
     else:
-        return ""
+        return ""								#optherwise, return nothing
         
 
 

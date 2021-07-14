@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #In this mission you should check if all elements in the given list are equal.
 
 #Input: List.
@@ -13,10 +16,11 @@ def all_the_same(elements: List[Any]) -> bool:
         Otherwise returns False.
     '''
     
-    outval = True
-    for i in range(0, len(elements)-1):
-        if elements[i] != elements[i+1]:
+    outval = True						#assume they all natch until proven wrong.
+    for i in range(0, len(elements)-1):	#cycle through the list.
+        if elements[i] != elements[i+1]:#if an item and it's sucessor aren't equal, the result is instantly false.
             outval = False
+			#cout probaably make this a little more efficient, but not my job rn...
     
     return outval        
 

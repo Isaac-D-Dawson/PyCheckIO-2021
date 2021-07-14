@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #Check if the given number is even or not. Your function should return True if the number is even, and False if the number is odd.
 
 #Input: An int.
@@ -10,7 +13,7 @@ def is_even(num: int) -> bool:
         Otherwise, returns False.
     '''
     
-    return num %2 == 0
+    return num %2 == 0	#returns True if the input is divisible by 2.
 
 
 if __name__ == '__main__':

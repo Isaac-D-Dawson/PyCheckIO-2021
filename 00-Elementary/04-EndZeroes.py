@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 # Try to find out how many zeros a given number has at the end.
 
 # Input: A positive Int
@@ -8,12 +11,14 @@ def end_zeros(num: int) -> int:
 		Returns the number of "0" characters present on the end of an int
 	'''
     
+	#assign variables
     inval = str(num)
     outval = 0
     
+	#loop for as long as the number ends in "0" chars (And as long as there is a number to check)
     while len(inval) > 0 and inval[-1] == "0":
-        outval += 1
-        inval = f"{inval[0:-1]}"
+        outval += 1					#increase our count by one.
+        inval = f"{inval[0:-1]}"	#Re-assign our input to remove the last char(the one we just counted)
         
     
     return outval

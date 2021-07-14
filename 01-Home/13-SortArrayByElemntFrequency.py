@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #Sort the given iterable so that its elements end up in the decreasing frequency order, that is, the number of times they appear in elements. If two elements have the same frequency, they should end up in the same order as the first appearance in the iterable.
 
 #Input: Iterable
@@ -7,10 +10,10 @@
 def freq_subsort(a: list, b) -> tuple:
     '''
         A subfunction designed to return the count and index of a given item from a given list.
-        Designed to be used in a lambda funtion as a sort key.
+        Designed to be used in a lambda function as a sort key.
     '''
     
-    return (-a.count(b), a.index(b) )
+    return (-a.count(b), a.index(b) )	#returns the negative count and the index of item b in a, for sorting purposes.
 
 def frequency_sort(items: list) -> list:
     '''
@@ -18,7 +21,7 @@ def frequency_sort(items: list) -> list:
     '''
     
     #outval = sorted(items, key = lambda i:( -items.count(i), items.index(i)))
-    outval = sorted(items, key = lambda i:freq_subsort(items, i) )
+    outval = sorted(items, key = lambda i:freq_subsort(items, i) )	#uses the subsort function to sort the list provided by the frequency of each item.
     
     return outval
 

@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #In a given string you should reverse every word, but the words should stay in their places.
 
 #Input: A string.
@@ -6,19 +9,21 @@
 
 def backward_string_by_word(text: str) -> str:
     '''
-        Reverses all substrings seperated by spaces present in the input string.
+        Reverses all substrings separated by spaces present in the input string.
     '''
     
-    inval = text.split(" ")
+    inval = text.split(" ")			#separates all words
     
-    for i in range(0, len(inval)):
-        inval[i] = inval[i][::-1]
+    for i in range(0, len(inval)):	#gets the index of each word
+        inval[i] = inval[i][::-1]	#assigns the item at each index to be a reverse of itself.
+		#This reverse slice is really clever, and it pops up a lot more later on.
+		#After all, once you find a handy tool, you try to use it everywhere
     
-    outval = ""
-    for i in inval:
-        outval += f"{i} "
+    outval = ""				#start with a blank output
+    for i in inval:			#for each reversed word in the input
+        outval += f"{i} "	#add it to the output, with a space on the end.
     
-    return outval.strip()
+    return outval.strip()	#return the output, and remove that extra space right on the end.
 
 
 if __name__ == '__main__':

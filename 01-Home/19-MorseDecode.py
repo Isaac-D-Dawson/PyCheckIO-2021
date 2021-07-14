@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #Your task is to decrypt the secret message using the Morse code .
 #The message will consist of words with 3 spaces between them and 1 space between each letter of each word.
 #If the decrypted text starts with a letter then you'll have to print this letter in uppercase.
@@ -11,7 +14,7 @@
 #And spaces, you didn't mention those!
 
 
-#Thankfully included by default, savesme thing to build my own mose Dictionary >.>
+#Thankfully included by default, saves me thing to build my own morse Dictionary >.>
 MORSE = {'.-':    'a', '-...':  'b', '-.-.':  'c',
          '-..':   'd', '.':     'e', '..-.':  'f',
          '--.':   'g', '....':  'h', '..':    'i',
@@ -33,17 +36,17 @@ def morse_decoder(code):
         Takes a string of Morse code and converts it into english text.
     '''
     
-    inval = code.split(" ")
+    inval = code.split(" ") #split all the letters appart.
     outval = ""
     
     for i in inval:
-        outval += (f"{MORSE[i]}")
+        outval += (f"{MORSE[i]}")	#convert each letter with the dictionary.
     
+	#strip all the extra spaces between the letters and the words.
     outval = outval.replace("  ", " ") #I'm surprised this works? either the check is recursive...
     #...or I've not given it anything with needless extra spaces.
-    outval = f"{outval[0].upper()}{outval[1:]}"
+    outval = f"{outval[0].upper()}{outval[1:]}"	#quickly edit in a capital to start the sentence.
     
-    print(outval)
     return outval 
 
 if __name__ == '__main__':

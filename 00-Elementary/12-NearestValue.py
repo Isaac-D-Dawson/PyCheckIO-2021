@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #Find the nearest value to the given one.
 #You are given a list of values as set form and a value for which you need to find the nearest one.
 #For example, we have the following set of numbers: 4, 7, 10, 11, 12, 17, and we need to find the nearest value to the number 9. If we sort this set in the ascending order, then to the left of number 9 will be number 7 and to the right - will be number 10. But 10 is closer than 7, which means that the correct answer is 10.
@@ -19,16 +22,16 @@ def nearest_value(values: set, one: int) -> int:
     '''
     
     
-    oneDo = one
-    oneUp = one
+    oneDo = one	#short for one down, this var keeps track of the lowest number to check
+    oneUp = one			# meanwhile, this var keeps track of the highest number to check
     
-    while True:
-        if oneDo in values:
+    while True:				#an infinite loop. hindsight tells me this could hang on an empty list, but... Wasn't in the requirements or the checks.
+        if oneDo in values:	#if the lower value is in the input, return it
             return oneDo
-        if oneUp in values:
+        if oneUp in values:	#if the higher value is in the input, return it.
             return oneUp
-        oneDo -= 1
-        oneUp += 1
+        oneDo -= 1			#if neither were, then we can reduce the lower check by one.
+        oneUp += 1			#and increase the higher check by one. Repeat until we find something present in the input.
 
 if __name__ == '__main__':
     print("Example:")

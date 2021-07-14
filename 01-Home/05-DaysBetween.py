@@ -1,4 +1,7 @@
-#I had to get some hints on this one, I'nm not proud. but it does work, and I mostly understand how
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
+#I had to get some hints on this one, I'm not proud. but it does work, and I mostly understand how
 
 #How old are you in a number of days? It's easy to calculate - just subtract your birthday from today. We could make this a real challenge though and count the difference between any dates.
 #You are given two dates as an array with three numbers - a year, month and day. For example: 19 April 1982 will be (1982, 4, 19). You should find the difference in days between the given dates. For example between today and tomorrow = 1 day. The difference will always be either a positive number or zero, so don't forget about the absolute value.
@@ -15,10 +18,10 @@ def days_diff(a: tuple, b: tuple) -> int:
     
     import datetime as dt
     
-    a = dt.date(a[0], a[1], a[2])
+    a = dt.date(a[0], a[1], a[2])	#converts the provided input into a datetime formate
     b = dt.date(b[0], b[1], b[2])
     
-    return abs((a-b)).days
+    return abs((a-b)).days			#subtratcs the two datetime objects from eachother and returns the days value.
     
     
 if __name__ == '__main__':

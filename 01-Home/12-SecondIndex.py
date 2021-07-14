@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You are given two strings and you have to find an index of the second occurrence of the second string in the first one.
 #Let's go through the first example where you need to find the second occurrence of "s" in a word "sims". It’s easy to find its first occurrence with a function index or find which will point out that "s" is the first symbol in a word "sims" and therefore the index of the first occurrence is 0. But we have to find the second "s" which is 4th in a row and that means that the index of the second occurrence (and the answer to a question) is 3.
 
@@ -10,13 +13,15 @@ def second_index(text: str, symbol: str) -> [int, None]:
     """
     
     
-    if text.count(symbol) >= 2:
-        target = text.index(symbol)
-        text = f"{text[0:target]}{text[target+1:]}"
+    if text.count(symbol) >= 2:						#check that the target appears more than once...
+        target = text.index(symbol)					#locate the index of the first instance
+        text = f"{text[0:target]}{text[target+1:]}"	#remove it from the list
         
-        return text.index(symbol)+1
+        return text.index(symbol)+1					#return the next index of the symbol, and add one for the extra symbol we removed.
     else:
-        return None
+        return None									#or return none of it only appears once.
+	#We really need better utilities for finding the index of things. remind me to write one at some point.
+	#I'm thinking expand this to return a list of indexes. Put it on my to-do list.
 
 
 if __name__ == '__main__':

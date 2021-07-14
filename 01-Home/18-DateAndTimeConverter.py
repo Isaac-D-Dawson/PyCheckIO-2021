@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #Computer date and time format consists only of numbers, for example: 21.05.2018 16:30
 #Humans prefer to see something like this: 21 May 2018 year, 16 hours 30 minutes
 #Your task is simple - convert the input date and time from computer format into a "human" format.
@@ -17,8 +20,9 @@ def date_time(time: str) -> str:
         Takes a date and time as a string, and returns them in a human-readable format.
     '''
     
-    
-    months = {
+    #Datetime could have done this better, but working with what I have
+	
+    months = {#dictionary of months, for convenience/
         "01" : "January"    ,
         "02" : "Febuary"    ,
         "03" : "March"      ,
@@ -33,20 +37,20 @@ def date_time(time: str) -> str:
         "12" : "December"
              }
     
-    date = time.split(" ")[0].split(".")
-    time = time.split(" ")[1].split(":")
+    date = time.split(" ")[0].split(".") #split the date off the time and save it.
+    time = time.split(" ")[1].split(":") #save the time too.
     
-    if time[0] == "01":
+    if time[0] == "01":			#set the suffix for hours real quick, otherwise we have to deal with plurality.
         time.append("hour")
     else:
         time.append("hours")
         
-    if time[1] == "01":
+    if time[1] == "01":			#do the same for minutes. 
         time.append("minute")
     else:
         time.append("minutes")
 
-    return f"{int(date[0])} {months[date[1]]} {date[2]} year {int(time[0])} {time[2]} {int(time[1])} {time[3]}"
+    return f"{int(date[0])} {months[date[1]]} {date[2]} year {int(time[0])} {time[2]} {int(time[1])} {time[3]}"	#Then construct it asll as a string and return it.
 
 if __name__ == '__main__':
     print("Example:")

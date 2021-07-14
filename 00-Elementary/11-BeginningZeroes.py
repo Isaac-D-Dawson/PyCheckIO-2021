@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You have a string that consist only of digits. You need to find how many zero digits ("0") are at the beginning of the given string.
 
 #Input: A string, that consist of digits.
@@ -6,19 +9,19 @@
 
 def beginning_zeros(number: str) -> int:
     '''
-        Returns the number of "0" chars present at the beggining of a string.
+        Returns the number of "0" chars present at the beginning of a string.
     '''
     
-    i = 0
+    i = 0	#create our output variable
     
-    if len(set(number)) > 1:
+    if len(set(number)) > 1:	#check that there are two different digits in the number.
     
-        while number[i] == "0":
-            i += 1
+        while number[i] == "0":	#if there are, cycle through them until you find something that isn't 0
+            i += 1				#and add one to our count (which also serves as an index, since w're starting form the start of the number, nifty
     
-    else:
-        if "0" in set(number):
-            i = len(number)
+    else:						#otherwise... there's only one type of digit present
+        if "0" in set(number):	#so we see if 0 is that type
+            i = len(number)		#and if it is we can just return the length of the number, as it's all "0"s.
     
     return i
 

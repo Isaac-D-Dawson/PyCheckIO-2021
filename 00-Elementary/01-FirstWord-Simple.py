@@ -1,4 +1,5 @@
 #Version 1.0. A future mission will use a more advanced version of this puzzle, and will have a V2 revision solution.
+#V1.1: added comments explaining logic.
 
 # You are given a string and you have to find its first word.
 # This is a simplified version of the First Word mission, which can be solved later.
@@ -14,7 +15,7 @@ def first_word(text: str) -> str:
         returns the first word in a given text.
     """
     
-    return text.split(" ")[0]
+    return text.split(" ")[0] #split on spaces to find a word, return the first(0th) item from that list.
 
 
 if __name__ == '__main__':

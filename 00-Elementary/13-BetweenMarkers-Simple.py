@@ -1,4 +1,5 @@
 #V1.0. A future puzzle uses this same mechanic, and this file may be referred back to.
+#V1.1: added comments explaining logic.
 
 #You are given a string and two markers (the initial one and final). You have to find a substring enclosed between these two markers. But there are a few important conditions.
 #This is a simplified version of the Between Markers mission.
@@ -15,8 +16,8 @@ def between_markers(text: str, begin: str, end: str) -> str:
         returns substring between two given markers
     """
     
-    inval = text.split(begin)
-    return inval[-1].split(end)[0]
+    inval = text.split(begin)		#split the text on the beginning marker
+    return inval[-1].split(end)[0]	#Grab the latter half of that text, and then split that on the ending marker and return the first half of that.
 
 
 if __name__ == '__main__':

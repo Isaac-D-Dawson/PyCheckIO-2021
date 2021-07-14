@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #You are given an array of integers. You should find the sum of the integers with even indexes (0th, 2nd, 4th...). Then multiply this summed number and the final element of the array together. Don't forget that the first element has an index of 0.
 #For an empty array, the result will always be 0 (zero).
 
@@ -14,10 +17,10 @@ def checkio(array: list) -> int:
     
     outval    = 0
     
-    if array != []:
-        for i in range(0, len(array), 2):
-            outval += array[i]
-        outval = outval * array[-1]
+    if array != []:							#if the array isn't empty
+        for i in range(0, len(array), 2):	#locates all even items in a list (a list splice would have worked...)
+            outval += array[i]				#adds them to the output
+        outval = outval * array[-1]			#multiplies them with the last item in the list.
         
     return outval
     

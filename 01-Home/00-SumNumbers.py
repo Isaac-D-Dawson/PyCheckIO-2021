@@ -1,3 +1,6 @@
+#V1.0: initial program, which meets all requirements provided.
+#V1.1: added comments explaining logic.
+
 #In a given text you need to sum the numbers while excluding any digits that form part of a word.
 #The text consists of numbers, spaces and letters from the English alphabet.
 
@@ -10,9 +13,10 @@ def sum_numbers(text: str) -> int:
     '''
     
     
-    inval = text.split(" ")
-    inval = [i for i in inval if  i.isnumeric() == True]
+    inval = text.split(" ")	#divides input into words.
+    inval = [i for i in inval if  i.isnumeric() == True]	#grabs all words that are purely numbers
     
+	#sums all those numbers, and returns the sum.
     outval = 0
     if inval != []:
         for i in inval:
